@@ -16,8 +16,8 @@
 
     <form action="/form" method="POST">
         @csrf
-        <label>Username : <input type="text" name="username"></label><br>
-        <label>Password : <input type="password" name="password"></label>
+        <label>Username : @error('username') {{ $message }} @enderror<input type="text" name="username"></label><br>
+        <label>Password : @error('password') {{ $message }} @enderror<input type="password" name="password"></label>
         <input type="submit" value="login">
     </form>
 </body>
