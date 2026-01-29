@@ -267,7 +267,7 @@ class ValidatorTest extends TestCase
                 "first" => "Gleam",
                 "last" => "Budi"
             ],
-            "address" => "address" => [
+            "address" => [
                 [
                     "street" => "Jalan Durian",
                     "city" => "Jakarta",
