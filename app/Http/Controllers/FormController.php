@@ -22,4 +22,18 @@ class FormController extends Controller
             return response($validationException->errors(), Response::HTTP_BAD_REQUEST  );
         }
     }
+    
+    public function form(): Response {
+        return response()->view("form");
+    }
+
+    public function submitForm(Request $request): Response 
+    {
+        $data = $request->validate([
+            "username" => "required",
+            "password" => "required"
+        ]);
+
+        return response("OK", Response::HTTP_OK);
+    }
 }
