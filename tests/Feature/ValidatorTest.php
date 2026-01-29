@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
@@ -83,6 +84,8 @@ class ValidatorTest extends TestCase
 
     public function testValidatorMultipleRules(): void
     {
+
+        App::setLocale("id");
         $data = [
             "username" => 'eko',
             "password" => 'eko'
