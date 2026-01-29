@@ -182,6 +182,7 @@ return [
         'username' => [
             'email' => 'We only accept email address for username',
         ],
+        'uppercase' => 'The :attribute field with :value must be UPPERCASE'
     ],
 
     /*
