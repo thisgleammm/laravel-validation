@@ -11,6 +11,7 @@ use Illuminate\Validation\Validator;
 class RegistrationRule implements ValidationRule, DataAwareRule, ValidatorAwareRule
 {
     private array $data;
+    private Validator $validator;
 
     public function setData(array $data): RegistrationRule
     {
@@ -26,7 +27,7 @@ class RegistrationRule implements ValidationRule, DataAwareRule, ValidatorAwareR
     /**
      * Run the validation rule.
      *
-     * @param  \Closure(string, ?string=): \Illuminate\Translation\PotentiallyTranslatedString  $fail
+     * @param  \Closure(string): \Illuminate\Translation\PotentiallyTranslatedString  $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
@@ -35,6 +36,6 @@ class RegistrationRule implements ValidationRule, DataAwareRule, ValidatorAwareR
 
         if($password == $username){
             $fail("$attribute must be different with username");
-        }
+        };
     }
 }
